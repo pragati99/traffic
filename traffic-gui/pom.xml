@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>edu.utdallas.mavs.traffic</groupId>
+    <artifactId>traffic</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>traffic-gui</groupId>
+  <artifactId>traffic-gui</artifactId>
+  
+  <!-- ======================================= -->
+   <!-- ==== Properties === /Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk-->
+   <!-- ======================================= -->
+   <properties>
+      <fx.home>C:\Program Files\Java\jdk1.8.0_60</fx.home>
+      <fx.rt>${fx.home}/jre/lib/jfxrt.jar</fx.rt>
+   </properties>
+   <!-- ======================================= -->
+   <!-- ==== Dependencies === -->
+   <!-- ======================================= -->
+   <dependencies>
+      <!-- Project Dependencies -->
+      <dependency>
+         <groupId>edu.utdallas.mavs.divas</groupId>
+         <artifactId>divas-gui</artifactId>
+         <version>${divas.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>edu.utdallas.mavs.traffic</groupId>
+         <artifactId>traffic-visualization</artifactId>
+         <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <!-- General Dependencies -->
+   </dependencies>
+   <!-- ======================================= -->
+   <!-- ==== Plugins === -->
+   <!-- ======================================= -->
+   <build>
+      <plugins>
+         <!-- <plugin>
+            <groupId>com.zenjava</groupId>
+            <artifactId>javafx-maven-plugin</artifactId>
+            <version>1.5</version>
+            <configuration>
+               <mainClass>edu.utdallas.mavs.matisse.gui.MatisseGui</mainClass>
+            </configuration>
+            <executions>
+               <execution>
+                  <id>make-assembly</id>
+                  this is used for inheritance merges
+                  <phase>install</phase>
+                  bind to the packaging phase
+                  <goals>
+                     <goal>build-jar</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin> -->
+        
+        
+        
+        <plugin>
+            <groupId>com.zenjava</groupId>
+            <artifactId>javafx-maven-plugin</artifactId>
+            <version>2.0</version>
+            <configuration>
+                <mainClass>net.jalbright.scratch.App</mainClass>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>org.twdata.maven</groupId>
+                    <artifactId>mojo-executor</artifactId>
+                    <version>2.1.0</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+
+
+
+         <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+               <execution>
+                  <id>copy_resources</id>
+                  <phase>install</phase>
+                  <configuration>
+                     <tasks>
+                        <copy todir="${project.build.directory}">
+                           <fileset dir="${basedir}" includes="*.properties" />
+                        </copy>
+                     </tasks>
+                  </configuration>
+                  <goals>
+                     <goal>run</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
+</project>

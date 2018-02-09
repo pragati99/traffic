@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+   <!-- ======================================= -->
+   <!-- ==== Project Information === -->
+   <!-- ======================================= -->
+  <parent>
+    <groupId>edu.utdallas.mavs.traffic</groupId>
+    <artifactId>traffic</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>traffic-visualization</artifactId>
+  <name>traffic-visualization</name>
+   <description>Visualization of the traffic system</description>
+   <packaging>jar</packaging>
+   
+   <!-- ======================================= -->
+   <!-- ==== Dependencies === -->
+   <!-- ======================================= -->
+   <dependencies>
+      <!-- Project Dependencies -->
+      <dependency>
+         <groupId>edu.utdallas.mavs.traffic</groupId>
+         <artifactId>traffic-simulation</artifactId>
+         <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <!-- General Dependencies -->
+      <dependency>
+         <groupId>edu.utdallas.mavs.divas</groupId>
+         <artifactId>divas-core</artifactId>
+         <version>${divas.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>edu.utdallas.mavs.divas</groupId>
+         <artifactId>divas-mts</artifactId>
+         <version>${divas.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>edu.utdallas.mavs.divas</groupId>
+         <artifactId>divas-utils</artifactId>
+         <version>${divas.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>edu.utdallas.mavs.divas</groupId>
+         <artifactId>divas-visualization</artifactId>
+         <version>${divas.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.google.inject</groupId>
+         <artifactId>guice</artifactId>
+         <version>${guice.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.activemq</groupId>
+         <artifactId>activemq-core</artifactId>
+         <version>${activeMQ.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.xmlbeans</groupId>
+         <artifactId>xmlbeans</artifactId>
+         <version>2.5.0</version>
+      </dependency>
+	<dependency>
+		<groupId>com.jme3-lib</groupId>
+		<artifactId>vecmath</artifactId>
+		<version>1.3.1</version>
+		<type>pom</type>
+	</dependency>
+      
+      <dependency>
+         <groupId>com.jme3</groupId>
+         <artifactId>jme3-niftygui</artifactId>
+         <version>3.0.10</version>
+      </dependency>
+
+		<dependency>
+			<groupId>com.github.nifty-gui</groupId>
+			<artifactId>nifty</artifactId>
+			<version>1.4.2-SNAPSHOT</version>
+		</dependency>
+
+
+	<dependency>
+		<groupId>net.sf.sociaal</groupId>
+		<artifactId>nifty-default-controls</artifactId>
+		<version>3.0.0.20130526</version>
+	</dependency>
+
+<dependency>
+    <groupId>com.github.nifty-gui</groupId>
+    <artifactId>nifty-style-black</artifactId>
+    <version>1.4.2</version>
+</dependency>
+   </dependencies>
+</project>

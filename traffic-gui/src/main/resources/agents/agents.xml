@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Agents>
+   <agentType id="Vehicle" name="Vehicle" type="Vehicle">
+      <agentClass description="Audi" modelName="car_audi_" type="Audi" name="Audi" image="vehicles/audi1.png">
+         <position x="0" y="0" z="20" />
+         <scale x="1.001" y="1" z="1.001" />
+      </agentClass>
+      <agentClass description="BMW" modelName="car_bmw_" type="BMW" name="BMW" image="vehicles/bmw1.png">
+         <position x="0" y="0" z="20" />
+         <scale x="1.001" y="1" z="1.001" />
+      </agentClass>
+      <agentClass description="FJ SUV" modelName="car_fjsuv_" type="FJ SUV" name="FJ SUV" image="vehicles/fj_suv.png">
+         <position x="0" y="0" z="20" />
+         <scale x="1.001" y="1" z="1.001" />
+      </agentClass>
+      <agentClass description="Rugged Sport Coupe" modelName="car_rsc_" type="RSC" name="Rugged Sport Coupe" image="vehicles/rsc.png">
+         <position x="0" y="0" z="20" />
+         <scale x="1.001" y="1" z="1.001" />
+      </agentClass>
+      <agentClass description="Sport Car" modelName="car_sport_" type="Sport Car" name="Sport Car" image="vehicles/sport.png">
+         <position x="0" y="0" z="20" />
+         <scale x="1.001" y="1" z="1.001" />
+      </agentClass>
+   </agentType>
+</Agents>

@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>edu.utdallas.mavs.traffic</groupId>
+    <artifactId>traffic</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>traffic-simulation</artifactId>
+  <name>traffic-simulation</name>
+   <description>Simulation of the traffic system</description>
+   <packaging>jar</packaging>
+   
+   
+    <!-- ======================================= -->
+   <!-- ==== Dependencies === -->
+   <!-- ======================================= -->
+   <dependencies>
+      <!-- Project Dependencies -->
+      <dependency>
+         <groupId>edu.utdallas.mavs.divas</groupId>
+         <artifactId>divas-core</artifactId>
+         <version>${divas.version}</version>
+      </dependency>
+      <!-- General Dependencies -->
+      <dependency>
+         <groupId>com.google.inject</groupId>
+         <artifactId>guice</artifactId>
+         <version>${guice.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>jgrapht</groupId>
+         <artifactId>jgrapht</artifactId>
+         <version>0.7.3</version>
+      </dependency>
+   </dependencies>
+   
+     <!-- ======================================= -->
+   <!-- ==== Assembly Plugin Configuration ==== -->
+   <!-- ======================================= -->
+   <build>
+      <plugins>
+         <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+               <outputDirectory>${project.build.directory}</outputDirectory>
+               <archive>
+                  <manifest>
+                     <mainClass>edu.utdallas.mavs.traffic.simulation.TrafficMain</mainClass>
+                  </manifest>
+               </archive>
+               <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+               </descriptorRefs>
+               <appendAssemblyId>false</appendAssemblyId>
+            </configuration>
+            <executions>
+               <execution>
+                  <id>make-assembly</id>
+                  <phase>install</phase>
+                  <goals>
+                     <goal>single</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+         <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+               <execution>
+                  <id>copy_resources</id>
+                  <phase>install</phase>
+                  <configuration>
+                     <tasks>
+                        <copy todir="${project.build.directory}">
+                           <fileset dir="${basedir}" includes="*.properties" />
+                        </copy>
+                     </tasks>
+                  </configuration>
+                  <goals>
+                     <goal>run</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
+</project>
